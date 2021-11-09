@@ -1,4 +1,12 @@
+const mysql = require('mysql2');
+
+
 class PartyChat {
+    constructor(dbInfo){
+        this.db = mysql.createConnection(dbInfo);
+    }
+
+
 
 
 // list of all parties a user is subscribed to
