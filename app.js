@@ -1,11 +1,9 @@
 class PartyChat {
-
     constructor(dbInfo){
         this.db = createConnection(dbInfo)
     }
 
     const dbInfo = {
-        const connection = mysql.createConnection({
             host: 'localhost',
             user: 'root',
             database: 'partyline',
