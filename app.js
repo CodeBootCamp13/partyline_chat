@@ -26,7 +26,7 @@ class PartyChat {
 
     };
 
-// subscribe to a new party
+// subscribe to a new party/ request access
     sub(party_id){
 
     };
@@ -38,6 +38,11 @@ class PartyChat {
     };
 
 }
+
+// invite a member to a group
+
+
+
 
 module.exports = PartyChat;
 
