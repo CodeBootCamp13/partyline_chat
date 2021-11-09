@@ -1,16 +1,12 @@
+const mysql = require('mysql2')
+
+
 class PartyChat {
     constructor(dbInfo){
-        this.db = createConnection(dbInfo)
+        this.db = mysql.createConnection(dbInfo);
     }
 
-    const dbInfo = {
-            host: 'localhost',
-            user: 'root',
-            database: 'partyline',
-            waitForConnections: true,
-            connectionLimit: 10,
-            queueLimit: 0
-    }
+
 
 
 // list of all parties a user is subscribed to
