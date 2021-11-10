@@ -45,13 +45,24 @@ class PartyChat {
     };
 
 
+// add new parties
+addParty(parent_id, user_id, name, description){
+    this.db.query('INSERT INTO parties (parent_id, user_id, name, description) VALUES (?,?,?,?)',[parent_id, user_id, name, description], (err, results) => {
+        console.log(results);
+        console.log(err)
+    })
+};
+
+
 // delete parties
     delete(party_id){
 
     };
 
-}
+
 
 // invite a member to a group
+};
+
 
 module.exports = PartyChat;
