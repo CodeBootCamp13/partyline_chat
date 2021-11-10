@@ -1,3 +1,4 @@
+const app = require('express');
 const mysql = require('mysql2');
 
 
@@ -30,8 +31,13 @@ class PartyChat {
 
 // browse through different parties to join
     browse(){
-
+        this.db.query('SELECT `name` FROM `parties`', (err, results) => {
+            console.log(results);
+            console.log(err)
+        })
     };
+
+
 
 // subscribe to a new party/ request access
     sub(party_id){
