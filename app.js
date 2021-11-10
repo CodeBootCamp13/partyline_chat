@@ -55,8 +55,11 @@ addParty(parent_id, user_id, name, description){
 
 
 // delete parties
-    delete(party_id){
-
+    delete(id){
+    this.db.query('DELETE FROM parties WHERE id = ?', [id], (err, results) => {
+        console.log(results);
+        console.log(err)
+    })
     };
 
 
