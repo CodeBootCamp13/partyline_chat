@@ -6,17 +6,16 @@ class PartyChat {
         this.db = mysql.createConnection(dbInfo);
     }
 
-
-
-
 // list of all parties a user is subscribed to
     partiesList (username){
 
     };
 
-// create a chat system within each party
-    chat(username, recipient,party_id){
-
+// store a sent chat message
+    chat(party_id, user_id, message, sent_on){
+        let inserts = [];
+        inserts.push([party_id, user_id, message, sent_on]);
+        return this.db.query('INSERT INTO messages(party_id, user_id, message, sent_on) VALUES (?, ?, ?, ?)', inserts);
     };
 
 // display the title of the chat
@@ -49,8 +48,4 @@ class PartyChat {
 
 // invite a member to a group
 
-
-
-
 module.exports = PartyChat;
-
