@@ -8,20 +8,31 @@ class PartyChat {
     }
 
 // list of all parties a user is subscribed to
-    partiesList (username){
-
+    userPartyList (user_id){
+        this.db.query('SELECT `name` FROM '/*want this to be selected from user subscription table */, (err, results) => {
+            console.log(results);
+            console.log(err)
+        })
     };
 
 // store a sent chat message
     chat(party_id, user_id, message, sent_on){
-        let inserts = [];
-        inserts.push([party_id, user_id, message, sent_on]);
-        return this.db.query('INSERT INTO messages(party_id, user_id, message, sent_on) VALUES (?, ?, ?, ?)', inserts);
+
     };
 
-// display the title of the chat
-    title(party_id){
+//  display previous party messages 
+    history(){
+        this.db.query('SELECT `message` FROM `messages`', (err, results) =>{
+            console.log(results);
+            console.log(err);
+        })
+    };
 
+    title(id){
+        this.db.query('SELECT `name` FROM `parties` WHERE id = ?', [id],(err, results) =>{
+            console.log(results);
+            console.log(err); 
+        })
     };
 
 // search for new chats
@@ -33,7 +44,7 @@ class PartyChat {
     browse(){
         this.db.query('SELECT `name` FROM `parties`', (err, results) => {
             console.log(results);
-            console.log(err)
+            console.log(err);
         })
     };
 
