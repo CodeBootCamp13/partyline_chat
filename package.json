@@ -19,7 +19,8 @@
   "homepage": "https://github.com/CodeBootCamp13/partyline_chat#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mysql2": "^2.3.3-rc.0"
+    "mysql2": "^2.3.3-rc.0",
+    "node": "^17.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

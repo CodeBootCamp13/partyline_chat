@@ -13,10 +13,11 @@ class PartyChat {
     };
 
 // store a sent chat message
-    chat(party_id, user_id, message, sent_on){
-        let inserts = [];
-        inserts.push([party_id, user_id, message, sent_on]);
-        return this.db.query('INSERT INTO messages(party_id, user_id, message, sent_on) VALUES (?, ?, ?, ?)', inserts);
+    chat(party_id, user_id, message){
+        this.db.query('INSERT INTO messages (party_id, user_id, message) VALUES (?,?,?)',[party_id, user_id, message], (err, results) => {
+            console.log(results);
+            console.log(err)
+        })
     };
 
 // display the title of the chat
